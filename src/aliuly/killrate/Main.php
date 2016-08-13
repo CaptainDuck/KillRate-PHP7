@@ -170,7 +170,7 @@ class Main extends PluginBase implements CommandExecutor,Listener {
 
 	public function onCommand(CommandSender $sender, Command $cmd, $label, array $args) {
 		switch($cmd->getName()) {
-			case "killrate":
+			case "kills":
 				if (count($args) == 0) return $this->cmdStats($sender,[]);
 				$scmd = strtolower(array_shift($args));
 				switch ($scmd) {
@@ -204,7 +204,7 @@ class Main extends PluginBase implements CommandExecutor,Listener {
 					case "help":
 						return $this->cmdHelp($sender,$args);
 					default:
-						$sender->sendMessage(mc::_("Unknown command.  Try /killrate help"));
+						$sender->sendMessage(mc::_("Unknown command.  Try /kills help"));
 						return false;
 				}
 		}
@@ -225,7 +225,7 @@ class Main extends PluginBase implements CommandExecutor,Listener {
 				if (isset($cmds[$c])) {
 					list($a,$b) = $cmds[$c];
 					$sender->sendMessage(TextFormat::RED.
-												mc::_("Usage: /killrate %1% %2%",$c,$a).
+												mc::_("Usage: /kills %1% %2%",$c,$a).
 												TextFormat::RESET);
 					$sender->sendMessage($b);
 				} else {
@@ -236,7 +236,7 @@ class Main extends PluginBase implements CommandExecutor,Listener {
 		}
 		$sender->sendMessage(mc::_("KillRate sub-commands"));
 		foreach ($cmds as $a => $b) {
-			$sender->sendMessage("- ".TextFormat::GREEN."/killrate ".$a.
+			$sender->sendMessage("- ".TextFormat::GREEN."/kills ".$a.
 										TextFormat::RESET." ".$b[0]);
 		}
 		return true;
