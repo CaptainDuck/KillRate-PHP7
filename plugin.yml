@@ -15,14 +15,14 @@ website: https://github.com/alejandroliu/pocketmine-plugins/tree/master/KillRate
 commands:
   killrate:
     description: Show kill rate stats
-    usage: "/killrate [stats|top|give]"
-    aliases: [kr]
+    usage: "/kills [stats|top|give]"
+    aliases: [kr, kill, ki, k]
     permission: killrate.cmd
 
 permissions:
   killrate.cmd:
     default: true
-    description: "Give players access to KillRate command"
+    description: "Give players access to Kills command"
   killrate.cmd.stats:
     default: true
     description: "Access to stats command"
